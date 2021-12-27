@@ -1,13 +1,7 @@
 package com.jlearn;
 
-import com.jlearn.domain.User;
-import com.jlearn.repository.UserRepository;
-
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
+import com.jlearn.app.domain.User;
+import com.jlearn.app.repository.UserRepository;
 
 
 /**

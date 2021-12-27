@@ -1,9 +1,8 @@
 package com.jlearn;
 
-import com.jlearn.utils.SpringContextHolder;
 import org.junit.jupiter.api.Test;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.test.web.servlet.MockMvc;
 
 /**
  * @author dingjuru
@@ -17,6 +16,7 @@ public class AuthTests {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encode = encoder.encode("123456");
         System.out.println(encode);
+
     }
 
 
