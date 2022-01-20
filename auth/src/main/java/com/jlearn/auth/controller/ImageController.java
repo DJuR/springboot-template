@@ -3,6 +3,7 @@ package com.jlearn.auth.controller;
 import com.jlearn.auth.annotation.rest.AnonymousGetMapping;
 import com.jlearn.auth.utils.ImageUtil;
 import com.jlearn.common.BaseResponse;
+import com.wf.captcha.ArithmeticCaptcha;
 import com.wf.captcha.ChineseCaptcha;
 import com.wf.captcha.base.Captcha;
 import com.wf.captcha.utils.CaptchaUtil;
@@ -55,8 +56,12 @@ public class ImageController {
     @AnonymousGetMapping("/captcha")
     public void code(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        ChineseCaptcha captcha = new ChineseCaptcha(130, 48);
+        ArithmeticCaptcha captcha = new ArithmeticCaptcha(130, 48);
         captcha.text().toLowerCase();
+
+        String text = captcha.text();
+        System.out.println(text);
+
 
         CaptchaUtil.out(captcha, request, response);
 
